@@ -8,13 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-          mkdir ~/node_modules
-      - run:
-          npm i ~/node_modules
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - node_modules
+          npm i
       - run:
           npm run lint
   test:
@@ -22,8 +16,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/node_modules
       - run:
           npm i
       - run:
@@ -33,8 +25,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/node_modules
       - run:
           npm i
       - run:
