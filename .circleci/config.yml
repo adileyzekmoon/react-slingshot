@@ -10,7 +10,7 @@ jobs:
       - run:
           npm i
       - persist_to_workspace:
-          root: /src
+          root: ~/
           paths:
             - node_modules
       - run:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /src/node_modules
+          at: ~/node_modules
       - run:
           npm i
       - run:
@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /src/node_modules
+          at: ~/node_modules
       - run:
           npm i
       - run:
