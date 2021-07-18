@@ -8,7 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
-          npm i
+          mkdir ~/node_modules
+      - run:
+          npm i ~/node_modules
       - persist_to_workspace:
           root: ~/
           paths:
